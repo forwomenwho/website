@@ -1,0 +1,7 @@
+<div class="top-bar">
+    <div class="top-bar__inner">
+        {{#if left}}<span>{{left}}</span>{{else}}<span>{{@custom.current_issue_label}}</span>{{/if}}
+        {{#is "home"}}<span class="top-bar__middle">New every Sunday</span>{{/is}}
+        {{#unless hideSubscribe}}<a href="#subscribe">Subscribe</a>{{/unless}}
+    </div>
+</div>

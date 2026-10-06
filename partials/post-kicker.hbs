@@ -1,0 +1,2 @@
+{{!-- "The Feature · Work · Issue 01": department (internal tag), section (primary tag), issue (Issue NN tag). --}}
+{{#has tag="#The Feature"}}The Feature · {{/has}}{{#has tag="#The Edit"}}The Edit · {{/has}}{{#has tag="#Worth Knowing"}}Worth Knowing · {{/has}}{{#has tag="#Notes"}}Notes · {{/has}}{{#has tag="#One More Thing"}}One More Thing · {{/has}}{{#primary_tag}}{{name}}{{/primary_tag}}{{#foreach tags}}{{#match slug "~^" "issue-"}} · {{name}}{{/match}}{{/foreach}}

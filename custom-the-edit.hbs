@@ -1,0 +1,25 @@
+{{!< default}}
+{{!-- Template "The Edit" — every product recommendation in one browsable page (not mocked up; built from
+      the homepage Edit row). Shows the Product cards from every post tagged #The Edit, newest first. --}}
+{{#post}}
+<header class="edit-header band band--ivory">
+    <h1 class="edit-header__title">{{> "accent-text" text=title}}</h1>
+    {{#if custom_excerpt}}<p class="standfirst edit-header__standfirst">{{custom_excerpt}}</p>{{/if}}
+</header>
+{{/post}}
+
+{{#get "posts" filter="tag:hash-the-edit" include="tags" limit="50" as |edits|}}
+<div class="edit-list band band--ivory">
+    {{#foreach edits}}
+    <section class="edit-group" aria-labelledby="edit-{{slug}}">
+        <header class="section-header">
+            <h2 class="section-header__title" id="edit-{{slug}}"><a href="{{url}}">{{> "plain-text" text=title}}</a></h2>
+            <span class="small-link small-link--muted">{{#primary_tag}}{{name}} · {{/primary_tag}}{{date published_at format="D MMMM YYYY"}}</span>
+        </header>
+        <div class="edit-grid">
+            {{content}}
+        </div>
+    </section>
+    {{/foreach}}
+</div>
+{{/get}}

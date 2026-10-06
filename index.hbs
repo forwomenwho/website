@@ -1,0 +1,17 @@
+{{!< default}}
+{{!-- Fallback list of every post (used for /page/2/ and anywhere Ghost has no more specific template). --}}
+<section class="archive band" aria-labelledby="index-title">
+    <div class="archive__inner">
+        <header class="section-header">
+            <h1 class="section-header__title" id="index-title">Latest from the magazine</h1>
+            <span class="small-link small-link--muted">Newest first</span>
+        </header>
+        <div class="grid grid--3">
+            {{#foreach posts}}{{> "cards/post" style="home"}}{{/foreach}}
+        </div>
+        <nav class="archive__more" aria-label="Pages">
+            {{#if pagination.prev}}<a class="button button--outline" href="{{page_url pagination.prev}}">Newer pieces</a>{{/if}}
+            {{#if pagination.next}}<a class="button button--outline" href="{{page_url pagination.next}}">Older pieces</a>{{/if}}
+        </nav>
+    </div>
+</section>

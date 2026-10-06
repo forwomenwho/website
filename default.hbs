@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}" data-accent="{{#match @custom.accent_colour "Cherry"}}cherry{{else match @custom.accent_colour "Camel"}}camel{{else match @custom.accent_colour "Espresso"}}espresso{{else}}burgundy{{/match}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{#is "post, page"}}{{#post}}{{#if meta_title}}{{meta_title}}{{else}}{{> "plain-text" text=title}}{{/if}}{{/post}}{{else}}{{meta_title}}{{/is}}</title>
+
+    {{!-- Google Fonts: Bodoni Moda, EB Garamond, DM Sans. display=swap is set in the URL. --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=DM+Sans:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+
+    <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}{{#is "post"}}{{#post}}{{#primary_tag}} in-section-{{slug}}{{/primary_tag}}{{/post}}{{/is}}">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+{{#block "top-bar"}}{{> "top-bar"}}{{/block}}
+
+{{#is "home"}}
+    {{!-- The homepage draws its own hero and nav bar; this slim bar slides in once the reader scrolls past them. --}}
+    {{> "masthead-slim" homepage=true}}
+{{else}}
+    {{> "masthead-slim"}}
+{{/is}}
+
+{{> "menu"}}
+
+<main id="main" class="site-main">
+    {{{body}}}
+</main>
+
+{{> "footer"}}
+
+<script src="{{asset "js/main.js"}}" defer></script>
+{{{block "scripts"}}}
+
+{{ghost_foot}}
+
+</body>
+</html>

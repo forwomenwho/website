@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.DS_Store
+# The Mélodrame font is licensed for personal use only until website use is confirmed.
+assets/fonts/*elodrame*
+assets/fonts/*ELODRAME*

@@ -1,0 +1,67 @@
+{{!-- Section page. Params: section (section tag slug), number ("01"–"05"), subtopic (slug of the active sub-topic tag).
+      The header always shows the parent section; posts come from the current tag. --}}
+{{#get "tags" filter="slug:{{section}}" limit="1" as |sections|}}
+{{#foreach sections}}
+<header class="section-hero section-hero--{{slug}}{{#if feature_image}} has-image{{/if}}">
+    {{#if feature_image}}
+        {{> "image" src=feature_image alt="" class="section-hero__image" sizes="100vw" width="2000" height="1000" eager=true}}
+    {{/if}}
+    <div class="section-hero__text">
+        {{#if ../../number}}<p class="label section-hero__number">Section {{../../number}}</p>{{/if}}
+        <h1 class="section-hero__name">{{name}}</h1>
+        {{#if description}}<p class="standfirst section-hero__standfirst">{{description}}</p>{{/if}}
+    </div>
+</header>
+
+{{#get "tags" filter="slug:~^'{{slug}}-'" order="name asc" limit="20" as |subtopics|}}
+<nav class="subtopics" aria-label="{{../name}} topics">
+    <ul class="subtopics__list swipe">
+        <li><a href="{{../url}}"{{#match ../../../current ../slug}} aria-current="page"{{/match}}>All</a></li>
+        {{#foreach subtopics}}
+        <li><a href="{{url}}"{{#match ../../../../current slug}} aria-current="page"{{/match}}>{{name}}</a></li>
+        {{/foreach}}
+    </ul>
+</nav>
+{{/get}}
+{{/foreach}}
+{{/get}}
+
+{{#unless pagination.prev}}
+    {{#foreach posts limit="1"}}
+    <section class="newest band band--accent" aria-label="Newest">
+        <a class="newest__media" href="{{url}}" tabindex="-1" aria-hidden="true">
+            {{#if feature_image}}{{> "image" src=feature_image alt="" class="newest__image" sizes="(min-width: 1000px) 60vw, 100vw" width="1600" height="1067"}}{{/if}}
+        </a>
+        <div class="newest__text">
+            <p class="label label--on-accent">Newest{{#primary_tag}}{{#foreach ../tags}}{{#match slug "~^" (concat ../slug "-")}} · {{name}}{{/match}}{{/foreach}}{{/primary_tag}} · {{reading_time}}</p>
+            <h2 class="newest__title"><a href="{{url}}">{{> "accent-text" text=title}}</a></h2>
+            {{#if custom_excerpt}}<p class="standfirst">{{custom_excerpt}}</p>{{/if}}
+            <a class="button button--outline-on-accent" href="{{url}}">Read the piece<span class="visually-hidden">: {{> "plain-text" text=title}}</span></a>
+        </div>
+    </section>
+    {{/foreach}}
+{{/unless}}
+
+<section class="archive band band--ivory" aria-labelledby="archive-title">
+    <div class="archive__inner">
+        <header class="section-header">
+            <h2 class="section-header__title" id="archive-title">All of {{tag.name}}</h2>
+            <span class="small-link small-link--muted">Newest first</span>
+        </header>
+        <div class="grid grid--3 grid--section">
+            {{#if pagination.prev}}
+                {{#foreach posts}}{{> "cards/post" style="section"}}{{/foreach}}
+            {{else}}
+                {{#foreach posts from="2" limit="1"}}{{> "cards/post" style="section" large=true}}{{/foreach}}
+                {{#foreach posts from="3"}}{{> "cards/post" style="section"}}{{/foreach}}
+            {{/if}}
+        </div>
+        {{#if pagination.next}}
+        <div class="archive__more">
+            <a class="button button--outline" href="{{page_url pagination.next}}">Older pieces</a>
+        </div>
+        {{/if}}
+    </div>
+</section>
+
+{{> "subscribe" style="centre" heading="A weekly magazine for women who have things to do"}}

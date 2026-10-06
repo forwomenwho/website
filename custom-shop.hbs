@@ -1,0 +1,30 @@
+{{!< default}}
+{{!-- Template "Shop" — the shop landing page at /shop/ (not mocked up; built from the homepage shop band
+      and the section grid). Lists every page tagged #Planners, #Journals, #Magazine or #Wallpapers. --}}
+{{#contentFor "top-bar"}}{{> "top-bar" left="Instant digital downloads" hideSubscribe=true}}{{/contentFor}}
+{{#post}}
+<header class="wordmark-header band band--grey">
+    <div class="wordmark-header__fit">
+        <h1 class="wordmark-header__title wordmark-header__title--shop">{{title}}</h1>
+    </div>
+    {{#if custom_excerpt}}<p class="standfirst wordmark-header__standfirst">{{custom_excerpt}}</p>{{/if}}
+</header>
+{{/post}}
+
+<nav class="shop-tabs" aria-label="Shop categories">
+    <ul class="shop-tabs__list swipe">
+        <li><a href="#planners">Planners</a></li>
+        <li><a href="#journals">Journals</a></li>
+        <li><a href="#magazine">The Magazine</a></li>
+        <li><a href="#wallpapers">Wallpapers</a></li>
+    </ul>
+</nav>
+
+<div class="shop-sections">
+    {{> "shop-section" id="planners" tag="hash-planners" name="Planners"}}
+    {{> "shop-section" id="journals" tag="hash-journals" name="Journals"}}
+    {{> "shop-section" id="magazine" tag="hash-magazine" name="The Magazine"}}
+    {{> "shop-section" id="wallpapers" tag="hash-wallpapers" name="Wallpapers"}}
+</div>
+
+{{#post}}{{#if html}}<div class="article-body content">{{content}}</div>{{/if}}{{/post}}

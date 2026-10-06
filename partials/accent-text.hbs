@@ -1,0 +1,1 @@
+{{#match text "~^" "*"}}{{#split text separator="*"}}{{#foreach this}}{{#if @odd}}<span class="accent-word">{{this}}</span>{{else}}{{this}}{{/if}}{{/foreach}}{{/split}}{{else}}{{#split text separator="*"}}{{#foreach this}}{{#if @even}}<span class="accent-word">{{this}}</span>{{else}}{{this}}{{/if}}{{/foreach}}{{/split}}{{/match}}

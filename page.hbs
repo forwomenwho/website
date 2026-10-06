@@ -1,0 +1,15 @@
+{{!< default}}
+{{!-- Default page: Terms, Privacy, Refunds and any other plain page. Uses the article's typography. --}}
+{{#post}}
+<article class="plain-page {{post_class}}">
+    {{#if @page.show_title_and_feature_image}}
+    <header class="plain-page__header">
+        <h1 class="plain-page__title">{{> "accent-text" text=title}}</h1>
+        {{#if custom_excerpt}}<p class="standfirst plain-page__standfirst">{{custom_excerpt}}</p>{{/if}}
+    </header>
+    {{/if}}
+    <div class="article-body content">
+        {{content}}
+    </div>
+</article>
+{{/post}}

@@ -1,0 +1,137 @@
+{
+    "name": "for-women-who",
+    "description": "The For Women Who theme: a faceless weekly women's magazine with a small digital shop.",
+    "version": "1.0.0",
+    "private": true,
+    "engines": {
+        "ghost": ">=6.0.0"
+    },
+    "license": "UNLICENSED",
+    "author": {
+        "name": "For Women Who",
+        "email": "hello@forwomenwho.com",
+        "url": "https://forwomenwho.com"
+    },
+    "keywords": [
+        "ghost-theme"
+    ],
+    "scripts": {
+        "test": "node scripts/check-licence.js && gscan --fatal --verbose .",
+        "zip": "node scripts/check-licence.js && node scripts/zip.js"
+    },
+    "devDependencies": {
+        "gscan": "6.6.1"
+    },
+    "config": {
+        "posts_per_page": 12,
+        "image_sizes": {
+            "xs": {
+                "width": 160
+            },
+            "s": {
+                "width": 400
+            },
+            "m": {
+                "width": 800
+            },
+            "l": {
+                "width": 1200
+            },
+            "xl": {
+                "width": 1600
+            },
+            "xxl": {
+                "width": 2400
+            }
+        },
+        "card_assets": true,
+        "custom": {
+            "accent_colour": {
+                "type": "select",
+                "options": [
+                    "Burgundy",
+                    "Cherry",
+                    "Camel",
+                    "Espresso"
+                ],
+                "default": "Burgundy",
+                "description": "The seasonal accent colour used across the whole site. One at a time."
+            },
+            "current_issue_label": {
+                "type": "text",
+                "default": "Issue 01 · Sunday [DATE]",
+                "description": "Shown in the black bar at the top of every page."
+            },
+            "contact_email": {
+                "type": "text",
+                "default": "[hello@YOUR-DOMAIN]",
+                "description": "Shown on the About page and used by the Contact link in the footer."
+            },
+            "instagram_url": {
+                "type": "text",
+                "description": "Full link to the Instagram profile. Leave empty to hide the link."
+            },
+            "pinterest_url": {
+                "type": "text",
+                "description": "Full link to the Pinterest profile. Leave empty to hide the link."
+            },
+            "about_hero_image": {
+                "type": "image",
+                "description": "About page header. Upload at least 2400 × 1350. No faces."
+            },
+            "hero_image": {
+                "type": "image",
+                "group": "homepage",
+                "description": "Full-bleed homepage photo. Upload at least 2400 × 1350; keep the middle calm."
+            },
+            "hero_button_text": {
+                "type": "text",
+                "default": "Read Issue 01",
+                "group": "homepage"
+            },
+            "hero_button_link": {
+                "type": "text",
+                "default": "/issues/",
+                "group": "homepage",
+                "description": "Where the hero button goes, for example /issues/ or /tag/issue-01/"
+            },
+            "marquee_lines": {
+                "type": "text",
+                "default": "For women who have places to be | For women who changed their minds | For women who care about their careers and their lipstick",
+                "group": "homepage",
+                "description": "The scrolling black strip. Separate each line with a | character."
+            },
+            "statement_text": {
+                "type": "text",
+                "default": "A weekly magazine about work, life, taste and everything we're still *figuring* out.",
+                "group": "homepage",
+                "description": "Wrap the one word for the oval in *asterisks*."
+            },
+            "shop_figure_image": {
+                "type": "image",
+                "group": "homepage",
+                "description": "Cutout in front of THE SHOP. Transparent PNG or WebP, at least 900 × 1500."
+            },
+            "shop_planners_image": {
+                "type": "image",
+                "group": "homepage",
+                "description": "Planners tile in the black shop strip. About 4:5, at least 800 × 1000."
+            },
+            "shop_journals_image": {
+                "type": "image",
+                "group": "homepage",
+                "description": "Journals tile in the black shop strip. About 4:5, at least 800 × 1000."
+            },
+            "shop_magazine_image": {
+                "type": "image",
+                "group": "homepage",
+                "description": "The Magazine tile in the black shop strip. About 4:5, at least 800 × 1000."
+            },
+            "shop_wallpapers_image": {
+                "type": "image",
+                "group": "homepage",
+                "description": "Wallpapers tile in the black shop strip. About 4:5, at least 800 × 1000."
+            }
+        }
+    }
+}

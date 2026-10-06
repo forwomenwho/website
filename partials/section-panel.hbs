@@ -1,0 +1,14 @@
+{{!-- One tall homepage panel. Image: the section tag's feature image. Number: CSS counter, 01 to 05 in order. --}}
+{{#get "tags" filter="slug:{{slug}}" limit="1" as |found|}}
+{{#foreach found}}
+<a class="panel" href="{{url}}">
+    {{#if feature_image}}
+        {{> "image" src=feature_image alt="" class="panel__image" sizes="(min-width: 1000px) 20vw, 240px" width="1000" height="2000"}}
+    {{/if}}
+    <span class="panel__text">
+        <span class="panel__number" aria-hidden="true"></span>
+        <span class="panel__name">{{name}}</span>
+    </span>
+</a>
+{{/foreach}}
+{{/get}}

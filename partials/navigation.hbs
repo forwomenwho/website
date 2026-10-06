@@ -1,0 +1,6 @@
+{{!-- Overrides Ghost's {{navigation}} output. Items come from Settings › Navigation. --}}
+<ul class="nav-list">
+    {{#foreach navigation}}
+    <li class="nav-item nav-{{slug}}{{#if current}} is-current{{/if}}"><a href="{{url absolute="true"}}"{{#if current}} aria-current="page"{{/if}}>{{label}}</a></li>
+    {{/foreach}}
+</ul>

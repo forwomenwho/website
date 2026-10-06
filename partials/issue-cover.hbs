@@ -1,0 +1,12 @@
+{{!-- Issue cover. Image: the issue tag's feature image. Params: size ("large" | "small"). Context: the issue tag. --}}
+<span class="issue-cover issue-cover--{{size}}{{#if feature_image}} has-image{{/if}}">
+    {{#if feature_image}}
+        {{> "image" src=feature_image alt="" class="issue-cover__image" sizes="(min-width: 1000px) 520px, 100vw" width="1600" height="2000"}}
+    {{/if}}
+    <span class="issue-cover__mast" aria-hidden="true">For <br>Women <br>Who</span>
+    {{#match size "large"}}
+        <span class="issue-cover__issue" aria-hidden="true">{{name}}</span>
+    {{else}}
+        <span class="issue-cover__number" aria-hidden="true">{{> "issue-number" text=name}}</span>
+    {{/match}}
+</span>

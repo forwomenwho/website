@@ -1,0 +1,40 @@
+## For Women Who — routes
+## Upload this file in Ghost › Settings › Labs › Routes (Upload routes file).
+## It gives each section a short address (/work/ instead of /tag/work/).
+## Ghost does not read this file from inside the theme; it has to be uploaded separately.
+
+routes:
+  /work/:
+    controller: channel
+    filter: primary_tag:work
+    template: tag
+    data: tag.work
+  /life/:
+    controller: channel
+    filter: primary_tag:life
+    template: tag
+    data: tag.life
+  /style/:
+    controller: channel
+    filter: primary_tag:style
+    template: tag
+    data: tag.style
+  /beauty/:
+    controller: channel
+    filter: primary_tag:beauty
+    template: tag
+    data: tag.beauty
+  /culture/:
+    controller: channel
+    filter: primary_tag:culture
+    template: tag
+    data: tag.culture
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+
+## Author archives are switched off: the publication is faceless.
+taxonomies:
+  tag: /tag/{slug}/

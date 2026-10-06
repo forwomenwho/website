@@ -1,0 +1,11 @@
+<section class="related band band--ivory" aria-labelledby="related-title">
+    <div class="archive__inner">
+        <header class="section-header">
+            <h2 class="section-header__title" id="related-title">Related reading</h2>
+            {{#if showAll}}{{#foreach posts limit="1"}}{{#primary_tag}}<a class="small-link" href="{{url}}">All of {{name}}</a>{{/primary_tag}}{{/foreach}}{{/if}}
+        </header>
+        <div class="grid grid--3">
+            {{#foreach posts}}{{> "cards/post" style="related"}}{{/foreach}}
+        </div>
+    </div>
+</section>

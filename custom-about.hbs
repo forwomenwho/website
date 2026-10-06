@@ -1,0 +1,40 @@
+{{!< default}}
+{{!-- Template "About" (mockups About / AboutMobile). Speaks as "we": no names, faces or places.
+      Hero image → theme setting "About hero image". Title → headline (*asterisks* mark the script words).
+      Excerpt → the paragraph under the headline. "What we publish" is built from the five section tags.
+      The page body follows; see README › About page for the layout it expects. --}}
+{{#post}}
+<header class="about-hero{{#if @custom.about_hero_image}} has-image{{/if}}">
+    {{#if @custom.about_hero_image}}
+        {{> "image" src=@custom.about_hero_image alt="" class="about-hero__image" sizes="100vw" width="2400" height="1350" eager=true}}
+    {{/if}}
+    <div class="about-hero__text">
+        <p class="label about-hero__label">About</p>
+        <h1 class="about-hero__title">{{> "accent-text" text=title}}</h1>
+        {{#if custom_excerpt}}<p class="about-hero__intro">{{custom_excerpt}}</p>{{/if}}
+    </div>
+</header>
+
+<section class="publish" aria-labelledby="publish-title">
+    <h2 class="publish__title" id="publish-title">What we publish</h2>
+    <dl class="publish__list">
+        {{> "about-section-row" slug="work"}}
+        {{> "about-section-row" slug="life"}}
+        {{> "about-section-row" slug="style"}}
+        {{> "about-section-row" slug="beauty"}}
+        {{> "about-section-row" slug="culture"}}
+    </dl>
+</section>
+
+<div class="about-body content">
+    {{content}}
+</div>
+
+<section class="contact" aria-labelledby="contact-title">
+    <h2 class="contact__title" id="contact-title">Write to us</h2>
+    {{#if @custom.contact_email}}<a class="contact__email" href="mailto:{{@custom.contact_email}}">{{@custom.contact_email}}</a>{{/if}}
+    <p class="label contact__note">For questions, pitches and shop help</p>
+</section>
+{{/post}}
+
+{{> "subscribe" style="light" heading="A weekly magazine for women who have things to do."}}

@@ -1,0 +1,17 @@
+{{!-- Grid card. Params: style ("home" | "section" | "simple"), large (wide first card on section pages). --}}
+<article class="card card--{{style}}{{#if large}} card--large{{/if}}">
+    <a class="card__media" href="{{url}}" tabindex="-1" aria-hidden="true">
+        {{#if feature_image}}
+            {{> "image" src=feature_image alt="" class="card__image" sizes="(min-width: 1000px) 400px, (min-width: 700px) 50vw, 100vw" width="1600" height="1067"}}
+        {{/if}}
+    </a>
+    {{#match style "section"}}
+        <p class="card__label">{{#primary_tag}}{{#foreach ../tags}}{{#match slug "~^" (concat ../slug "-")}}{{name}} · {{/match}}{{/foreach}}{{/primary_tag}}{{date published_at format="dddd D MMMM"}}</p>
+    {{else match style "home"}}
+        <p class="card__label">{{date published_at format="dddd D MMMM"}}</p>
+    {{/match}}
+    <h3 class="card__title"><a href="{{url}}">{{> "plain-text" text=title}}</a></h3>
+    {{#match style "!=" "simple"}}
+        <p class="card__meta">{{#match style "!=" "section"}}{{#primary_tag}}{{name}}<span class="card__sep" aria-hidden="true">|</span>{{/primary_tag}}{{/match}}{{reading_time}}</p>
+    {{/match}}
+</article>

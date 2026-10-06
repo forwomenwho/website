@@ -1,0 +1,6 @@
+{{#get "tags" filter="slug:{{slug}}" limit="1" as |found|}}{{#foreach found}}
+<div class="publish__row">
+    <dt class="label publish__name"><a href="{{url}}">{{name}}</a></dt>
+    <dd class="publish__desc">{{description}}</dd>
+</div>
+{{/foreach}}{{/get}}

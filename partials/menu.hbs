@@ -1,0 +1,13 @@
+{{!-- Full-screen menu for phones. Works without script through #menu; main.js adds focus handling and the Escape key. --}}
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" data-menu>
+    <div class="menu__bar">
+        <a class="icon-button" href="#" aria-label="Close menu" data-menu-close>{{> "icons/close"}}</a>
+        <a class="masthead__wordmark" href="{{@site.url}}">For Women Who</a>
+        <button class="icon-button" type="button" data-ghost-search aria-label="Search">{{> "icons/search"}}</button>
+    </div>
+    <nav class="menu__nav" aria-label="Menu">{{navigation}}</nav>
+    <div class="menu__foot">
+        <button class="menu__search" type="button" data-ghost-search>Search</button>
+        <a href="#subscribe" data-menu-close>Subscribe</a>
+    </div>
+</div>

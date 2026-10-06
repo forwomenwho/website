@@ -1,0 +1,26 @@
+{{!-- The one subscribe component. Params: style ("centre" | "split" | "light"), heading.
+     Uses Ghost's own member signup (data-members-form). Ghost adds .loading / .success / .error to the form. --}}
+{{#if @site.members_enabled}}
+<section class="subscribe subscribe--{{style}}" id="subscribe" aria-labelledby="subscribe-heading">
+    <div class="subscribe__inner">
+        <div class="subscribe__intro">
+            {{#match style "centre"}}
+                <p class="subscribe__script accent-word" aria-hidden="true">every Sunday</p>
+            {{else}}
+                <p class="label subscribe__label">Every Sunday</p>
+            {{/match}}
+            <h2 class="subscribe__heading" id="subscribe-heading">{{heading}}</h2>
+        </div>
+        <form class="subscribe__form" data-members-form="subscribe" novalidate>
+            <label class="label subscribe__field-label" for="subscribe-email">Email address</label>
+            <input class="subscribe__input" id="subscribe-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required data-members-email>
+            <button class="button subscribe__button" type="submit">
+                <span class="subscribe__button-idle">Subscribe</span>
+                <span class="subscribe__button-busy">Sending…</span>
+            </button>
+            <p class="subscribe__message subscribe__message--success" role="status">Thank you. Check your inbox and click the link to confirm.</p>
+            <p class="subscribe__message subscribe__message--error" role="alert"><span data-members-error></span><span class="subscribe__fallback-error">That didn’t work. Check the address and try again.</span></p>
+        </form>
+    </div>
+</section>
+{{/if}}

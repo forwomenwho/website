@@ -1,0 +1,5 @@
+<a class="shop-cat" href="{{@site.url}}/shop/#{{anchor}}">
+    <span class="shop-cat__thumb">{{#if photo}}<img src="{{img_url photo size="xs"}}" srcset="{{img_url photo size="xs"}} 160w, {{img_url photo size="s"}} 400w" sizes="80px" alt="" width="800" height="1000" loading="lazy" decoding="async">{{/if}}</span>
+    <span class="shop-cat__name">{{name}}</span>
+    <span class="shop-cat__link" aria-hidden="true"><span class="shop-cat__link-long">{{cta}}</span><span class="shop-cat__link-short">Shop →</span></span>
+</a>

@@ -1,0 +1,38 @@
+{{!< default}}
+{{!-- Template "Issues" — choose it for the page at /issues/ (mockups Issues / IssuesMobile).
+      Page title → the giant wordmark. Page excerpt → the line under it. --}}
+{{#post}}
+<header class="wordmark-header band band--ivory">
+    <div class="wordmark-header__fit">
+        <h1 class="wordmark-header__title">{{title}}</h1>
+    </div>
+    {{#if custom_excerpt}}<p class="standfirst wordmark-header__standfirst">{{custom_excerpt}}</p>{{/if}}
+</header>
+{{/post}}
+
+{{#get "tags" filter="slug:~^'issue-'" order="slug desc" include="count.posts" limit="100" as |issues|}}
+    {{#foreach issues limit="1"}}{{> "issue-band" mode="latest"}}{{/foreach}}
+
+    {{#if issues.[1]}}
+    <section class="archive band" aria-labelledby="earlier-title">
+        <div class="archive__inner">
+            <header class="section-header">
+                <h2 class="section-header__title" id="earlier-title">Earlier issues</h2>
+                <span class="small-link small-link--muted">Newest first</span>
+            </header>
+            <div class="grid grid--4 grid--issues">
+                {{#foreach issues from="2"}}
+                <a class="issue-card" href="{{url}}">
+                    {{> "issue-cover" size="small"}}
+                    <span class="card__label">{{name}}{{#get "posts" filter="tag:{{slug}}" limit="1" as |newest|}}{{#foreach newest}} · {{date published_at format="dddd D MMMM"}}{{/foreach}}{{/get}}</span>
+                    <span class="card__title">{{#get "posts" filter="tag:{{slug}}+tag:hash-the-feature" limit="1" as |feature|}}{{#foreach feature}}{{> "plain-text" text=title}}{{/foreach}}{{else}}{{name}}{{/get}}</span>
+                    <span class="card__meta">{{plural count.posts empty="No pieces yet" singular="% piece" plural="% pieces"}}</span>
+                </a>
+                {{/foreach}}
+            </div>
+        </div>
+    </section>
+    {{/if}}
+{{/get}}
+
+{{> "subscribe" style="centre" heading="Never miss an issue"}}

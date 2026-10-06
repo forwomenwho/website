@@ -1,0 +1,76 @@
+{{!-- Runs as soon as the product markup is parsed, before first paint, so nothing jumps.
+      Without script the page still works: everything stays in one readable column. --}}
+<script>
+(function () {
+    var note = document.querySelector('[data-product-note]');
+    if (!note) return;
+    var gallery = document.querySelector('[data-product-gallery]');
+    var buy = document.querySelector('[data-product-buy]');
+    var inside = document.querySelector('[data-product-inside]');
+    var rows = document.querySelector('[data-product-rows]');
+
+    // 1. Images: every gallery/image card moves into the gallery, one figure per image.
+    note.querySelectorAll('.kg-gallery-card img, .kg-image-card img').forEach(function (img) {
+        var fig = document.createElement('figure');
+        fig.className = 'product__shot';
+        img.removeAttribute('style');
+        img.className = 'product__image';
+        img.setAttribute('sizes', '(min-width: 1000px) 27vw, 100vw');
+        fig.appendChild(img);
+        gallery.appendChild(fig);
+    });
+    note.querySelectorAll('.kg-gallery-card, .kg-image-card').forEach(function (card) { card.remove(); });
+
+    // 2. The first Button card becomes the Lemon Squeezy Buy button (checkout opens as an overlay).
+    var link = note.querySelector('.kg-button-card a, a.kg-btn');
+    if (link) {
+        var href = link.getAttribute('href') || '';
+        var a = document.createElement('a');
+        a.className = 'button button--buy' + (/lemonsqueezy\.com/.test(href) ? ' lemonsqueezy-button' : '');
+        a.href = /lemonsqueezy\.com/.test(href) && !/[?&]embed=1/.test(href) ? href + (href.indexOf('?') > -1 ? '&' : '?') + 'embed=1' : href;
+        a.textContent = (link.textContent || '').trim() || 'Buy now';
+        buy.insertBefore(a, buy.firstChild);
+        var card = link.closest('.kg-button-card') || link;
+        card.remove();
+    }
+
+    // 3. "What's inside" heading + its list → rows in the accent band.
+    var heading = Array.prototype.find.call(note.querySelectorAll('h2, h3, h4'), function (h) {
+        return /what.s inside/i.test(h.textContent);
+    });
+    if (heading) {
+        var next = heading.nextElementSibling;
+        while (next && !/^(UL|OL)$/.test(next.tagName)) next = next.nextElementSibling;
+        if (next) {
+            next.querySelectorAll('li').forEach(function (li) {
+                var label, value;
+                var strong = li.querySelector('strong, b');
+                if (strong && li.firstChild === strong) {
+                    label = strong.textContent.replace(/:\s*$/, '');
+                    strong.remove();
+                    value = li.innerHTML.replace(/^\s*:?\s*/, '');
+                } else {
+                    var text = li.innerHTML;
+                    var i = text.indexOf(':');
+                    label = i > -1 ? text.slice(0, i) : '';
+                    value = i > -1 ? text.slice(i + 1).trim() : text;
+                }
+                var row = document.createElement('div');
+                row.className = 'inside__row';
+                var dt = document.createElement('dt');
+                dt.className = 'label';
+                dt.innerHTML = label;
+                var dd = document.createElement('dd');
+                dd.innerHTML = value;
+                row.appendChild(dt);
+                row.appendChild(dd);
+                rows.appendChild(row);
+            });
+            next.remove();
+        }
+        heading.remove();
+        if (rows.children.length) inside.hidden = false;
+    }
+    document.documentElement.classList.add('product-arranged');
+})();
+</script>

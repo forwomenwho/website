@@ -1,0 +1,14 @@
+{{!-- Full-bleed accent band with the feature image, headline (with its accent word), standfirst and button. --}}
+<section class="feature band band--accent" aria-label="The Feature">
+    <a class="feature__media" href="{{url}}" tabindex="-1" aria-hidden="true">
+        {{#if feature_image}}
+            {{> "image" src=feature_image alt="" class="feature__image" sizes="(min-width: 1000px) 560px, 100vw" width="1600" height="2000"}}
+        {{/if}}
+    </a>
+    <div class="feature__text">
+        <p class="label label--on-accent">{{> "post-kicker"}}</p>
+        <h2 class="feature__title"><a href="{{url}}">{{> "accent-text" text=title}}</a></h2>
+        {{#if custom_excerpt}}<p class="standfirst">{{custom_excerpt}}</p>{{/if}}
+        <a class="button button--outline-on-accent" href="{{url}}">Read the feature<span class="visually-hidden">: {{> "plain-text" text=title}}</span></a>
+    </div>
+</section>

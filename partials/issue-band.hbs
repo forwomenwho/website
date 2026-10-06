@@ -1,0 +1,38 @@
+{{!-- Black band: cover on the left, the issue's contents on the right.
+      Used for the latest issue on /issues/ and as the single issue contents page.
+      Context: the issue tag. Params: mode ("latest" | "single"). --}}
+<section class="issue-band" aria-labelledby="issue-{{slug}}-title">
+    <div class="issue-band__cover">{{> "issue-cover" size="large"}}</div>
+    <div class="issue-band__text">
+        <div class="issue-band__heading">
+            {{#match mode "latest"}}
+                <p class="issue-band__script accent-word" aria-hidden="true">the latest</p>
+                <h2 class="label issue-band__label" id="issue-{{slug}}-title">{{name}}{{#get "posts" filter="tag:{{slug}}" limit="1" as |newest|}}{{#foreach newest}} · {{date published_at format="dddd D MMMM"}}{{/foreach}}{{/get}}</h2>
+            {{else}}
+                <h1 class="issue-band__title" id="issue-{{slug}}-title">{{name}}</h1>
+                <p class="label issue-band__label">{{#get "posts" filter="tag:{{slug}}" limit="1" as |newest|}}{{#foreach newest}}{{date published_at format="dddd D MMMM"}}{{/foreach}}{{/get}}</p>
+            {{/match}}
+        </div>
+        <ol class="contents">
+            {{> "issue-contents-group" issue=slug dept="hash-the-feature" label="The Feature"}}
+            {{> "issue-contents-group" issue=slug dept="hash-the-edit" label="The Edit"}}
+            {{> "issue-contents-group" issue=slug dept="hash-worth-knowing" label="Worth Knowing"}}
+            {{> "issue-contents-group" issue=slug dept="hash-notes" label="Notes"}}
+            {{> "issue-contents-group" issue=slug dept="hash-one-more-thing" label="One More Thing"}}
+            {{#get "posts" filter="tag:{{slug}}+tag:-[hash-the-feature,hash-the-edit,hash-worth-knowing,hash-notes,hash-one-more-thing]" order="published_at asc" include="tags" limit="20" as |rest|}}
+            {{#foreach rest}}
+            <li class="contents__row">
+                <span class="contents__dept">{{#primary_tag}}{{name}}{{/primary_tag}}</span>
+                <a class="contents__title" href="{{url}}">{{> "plain-text" text=title}}</a>
+                <span class="contents__num" aria-hidden="true"></span>
+            </li>
+            {{/foreach}}
+            {{/get}}
+        </ol>
+        {{#match mode "latest"}}
+            <a class="button button--outline-light" href="{{url}}">Read {{name}}</a>
+        {{else}}
+            <a class="small-link small-link--light" href="{{@site.url}}/issues/">All issues</a>
+        {{/match}}
+    </div>
+</section>

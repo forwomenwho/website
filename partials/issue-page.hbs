@@ -1,0 +1,18 @@
+{{!-- A single issue's contents page (not mocked up; built from the latest-issue band on Issues). --}}
+{{#tag}}{{> "issue-band" mode="single"}}{{/tag}}
+
+<section class="archive band" aria-labelledby="issue-pieces-title">
+    <div class="archive__inner">
+        <header class="section-header">
+            <h2 class="section-header__title" id="issue-pieces-title">In this issue</h2>
+        </header>
+        <div class="grid grid--3">
+            {{#foreach posts}}{{> "cards/post" style="home"}}{{/foreach}}
+        </div>
+        {{#if pagination.next}}
+        <div class="archive__more"><a class="button button--outline" href="{{page_url pagination.next}}">More from this issue</a></div>
+        {{/if}}
+    </div>
+</section>
+
+{{> "subscribe" style="centre" heading="Never miss an issue"}}

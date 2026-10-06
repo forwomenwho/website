@@ -1,0 +1,9 @@
+{{!-- The slim one-line masthead. Inner pages: sticks to the top. Homepage: hidden until the reader scrolls past the hero. --}}
+<header class="masthead{{#if homepage}} masthead--home{{/if}}" data-masthead>
+    <div class="masthead__inner">
+        <a class="icon-button masthead__menu" href="#menu" aria-label="Open menu" data-menu-open>{{> "icons/menu"}}</a>
+        <a class="masthead__wordmark" href="{{@site.url}}">For Women Who</a>
+        <nav class="masthead__nav" aria-label="Main">{{navigation}}</nav>
+        <button class="icon-button masthead__search" type="button" data-ghost-search aria-label="Search">{{> "icons/search"}}</button>
+    </div>
+</header>

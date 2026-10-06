@@ -1,0 +1,21 @@
+{{!< default}}
+{{!-- One template for every tag page:
+      Issue NN tags (slug issue-NN)   → a single issue's contents page
+      The five sections               → section page (mockups Section / SectionMobile)
+      Sub-topics (slug section-name)  → the same section page, filtered, with the sub-topic underlined
+      Any other public tag            → a plain list in the same style --}}
+{{#match tag.slug "~^" "issue-"}}
+    {{> "issue-page"}}
+{{else match tag.slug "work"}}{{> "section-page" section="work" number="01" current=tag.slug}}
+{{else match tag.slug "~^" "work-"}}{{> "section-page" section="work" number="01" subtopic=tag.slug current=tag.slug}}
+{{else match tag.slug "life"}}{{> "section-page" section="life" number="02" current=tag.slug}}
+{{else match tag.slug "~^" "life-"}}{{> "section-page" section="life" number="02" subtopic=tag.slug current=tag.slug}}
+{{else match tag.slug "style"}}{{> "section-page" section="style" number="03" current=tag.slug}}
+{{else match tag.slug "~^" "style-"}}{{> "section-page" section="style" number="03" subtopic=tag.slug current=tag.slug}}
+{{else match tag.slug "beauty"}}{{> "section-page" section="beauty" number="04" current=tag.slug}}
+{{else match tag.slug "~^" "beauty-"}}{{> "section-page" section="beauty" number="04" subtopic=tag.slug current=tag.slug}}
+{{else match tag.slug "culture"}}{{> "section-page" section="culture" number="05" current=tag.slug}}
+{{else match tag.slug "~^" "culture-"}}{{> "section-page" section="culture" number="05" subtopic=tag.slug current=tag.slug}}
+{{else}}
+    {{> "section-page" section=tag.slug current=tag.slug}}
+{{/match}}

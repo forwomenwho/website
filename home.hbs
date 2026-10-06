@@ -1,0 +1,94 @@
+{{!< default}}
+{{!-- Homepage (mockups HomeV2 / HomeV2Mobile). Section order follows the brief, top to bottom. --}}
+
+{{!-- 2. Hero: full-bleed photo, FOR WOMEN / WHO and one outlined button. Nothing else over the masthead. --}}
+<section class="hero" aria-label="For Women Who">
+    {{#if @custom.hero_image}}
+        {{> "image" src=@custom.hero_image alt="" class="hero__image" sizes="100vw" width="2400" height="1350" eager=true}}
+    {{/if}}
+    <a class="icon-button hero__icon hero__icon--menu" href="#menu" aria-label="Open menu" data-menu-open>{{> "icons/menu"}}</a>
+    <button class="icon-button hero__icon hero__icon--search" type="button" data-ghost-search aria-label="Search">{{> "icons/search"}}</button>
+    <div class="hero__content">
+        <h1 class="hero__masthead"><span>For Women</span> <span>Who</span></h1>
+        {{#if @custom.hero_button_text}}
+            <a class="button button--outline-light" href="{{@custom.hero_button_link}}">{{@custom.hero_button_text}}</a>
+        {{/if}}
+    </div>
+</section>
+
+{{!-- 3. Navigation bar on ivory, under the hero. --}}
+<nav class="home-nav" aria-label="Main" data-home-nav>
+    {{navigation}}
+</nav>
+
+{{!-- 4. Black marquee strip. Lines come from the theme setting, separated by |. --}}
+{{#if @custom.marquee_lines}}
+<div class="marquee" data-marquee>
+    <div class="marquee__track">
+        <p class="marquee__group">{{#split @custom.marquee_lines separator="|"}}{{#foreach this}}<span class="marquee__line">{{this}}</span><span class="marquee__star" aria-hidden="true">✧</span>{{/foreach}}{{/split}}</p>
+        <p class="marquee__group" aria-hidden="true">{{#split @custom.marquee_lines separator="|"}}{{#foreach this}}<span class="marquee__line">{{this}}</span><span class="marquee__star">✧</span>{{/foreach}}{{/split}}</p>
+    </div>
+</div>
+{{/if}}
+
+{{!-- 5. Statement, with the *word* drawn in an oval. --}}
+{{#if @custom.statement_text}}
+<section class="statement" aria-label="About the magazine">
+    <p class="statement__text">{{> "accent-text" text=@custom.statement_text}}</p>
+    <a class="text-link" href="{{@site.url}}/about/">About the magazine</a>
+</section>
+{{/if}}
+
+{{!-- 6. Five tall numbered section panels. Images come from each section tag's feature image. --}}
+<section class="panels" id="sections" aria-label="Sections">
+    <div class="panels__row swipe">
+        {{> "section-panel" slug="work"}}
+        {{> "section-panel" slug="life"}}
+        {{> "section-panel" slug="style"}}
+        {{> "section-panel" slug="beauty"}}
+        {{> "section-panel" slug="culture"}}
+    </div>
+</section>
+
+{{!-- 7. Feature block: the newest post tagged #The Feature, or failing that the newest featured post. --}}
+{{#get "posts" filter="tag:hash-the-feature" include="tags" limit="1" as |feature|}}
+    {{#foreach feature}}{{> "feature-block"}}{{/foreach}}
+{{else}}
+    {{#get "posts" filter="featured:true" include="tags" limit="1" as |feature|}}
+        {{#foreach feature}}{{> "feature-block"}}{{/foreach}}
+    {{/get}}
+{{/get}}
+
+{{!-- 8. Latest: three columns of six pieces, newest first. --}}
+{{#get "posts" include="tags" limit="6" as |latest|}}
+<section class="latest band band--ivory" aria-labelledby="latest-title">
+    <header class="latest__header">
+        <p class="latest__script accent-word" aria-hidden="true">this week</p>
+        <h2 class="latest__title" id="latest-title">Latest from the magazine</h2>
+    </header>
+    <div class="grid grid--3">
+        {{#foreach latest}}{{> "cards/post" style="home"}}{{/foreach}}
+    </div>
+</section>
+{{/get}}
+
+{{!-- 9. Shop band: giant THE SHOP with the cutout figure in front, then the black category strip. --}}
+{{> "shop-band"}}
+
+{{!-- 10. The Edit: product cards from the newest post tagged #The Edit. --}}
+{{#get "posts" filter="tag:hash-the-edit" limit="1" as |edit|}}
+{{#foreach edit}}
+<section class="edit-band band band--ivory" aria-labelledby="edit-title">
+    <header class="edit-band__header">
+        <h2 class="edit-band__title" id="edit-title">The Edit <span class="accent-word">things worth having</span></h2>
+        <a class="small-link" href="{{@site.url}}/the-edit/">See all<span class="visually-hidden"> of The Edit</span></a>
+    </header>
+    <div class="edit-row swipe">
+        {{content}}
+    </div>
+</section>
+{{/foreach}}
+{{/get}}
+
+{{!-- 11. Subscribe: centred black band. --}}
+{{> "subscribe" style="centre" heading="A weekly magazine for women who have things to do"}}

@@ -1,0 +1,10 @@
+{{!-- Contents rows for one department of one issue. Params: issue (tag slug), dept (internal tag slug), label. --}}
+{{#get "posts" filter="tag:{{issue}}+tag:{{dept}}" order="published_at asc" limit="20" as |rows|}}
+{{#foreach rows}}
+<li class="contents__row">
+    <span class="contents__dept">{{../../label}}</span>
+    <a class="contents__title" href="{{url}}">{{> "plain-text" text=title}}</a>
+    <span class="contents__num" aria-hidden="true"></span>
+</li>
+{{/foreach}}
+{{/get}}

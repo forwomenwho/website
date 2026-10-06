@@ -1,0 +1,79 @@
+{{!< default}}
+{{!-- Template "Product" (mockups Product / ProductMobile). One template for every product.
+      Title → product name. Excerpt → price, as text. Feature image → first gallery image.
+      Internal tag #Planners / #Journals / #Magazine / #Wallpapers → category.
+      Page body, in this order (README › Adding a product):
+        1. the editorial note (ordinary paragraphs)
+        2. a Gallery card or Image cards        → moved into the gallery
+        3. a Button card with the Lemon Squeezy checkout link → becomes the Buy button
+        4. a heading "What's inside", then a bulleted list of "Label: value" rows → the accent band --}}
+
+{{#contentFor "top-bar"}}{{> "top-bar" left="Instant digital downloads" hideSubscribe=true}}{{/contentFor}}
+{{#contentFor "scripts"}}<script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>{{/contentFor}}
+
+{{#post}}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="{{@site.url}}/shop/">Shop</a></li>
+        {{> "product-category" asLink=true}}
+        <li aria-current="page">{{title}}</li>
+    </ol>
+</nav>
+
+<div class="product" data-product>
+    <div class="product__gallery swipe" data-product-gallery>
+        {{#if feature_image}}
+            <figure class="product__shot">
+                {{> "image" src=feature_image alt=feature_image_alt class="product__image" sizes="(min-width: 1000px) 55vw, 100vw" width="1600" height="2000" eager=true}}
+            </figure>
+        {{/if}}
+    </div>
+    <p class="product__swipe-hint label" aria-hidden="true">Swipe for more →</p>
+
+    <div class="product__info">
+        <p class="label label--accent">{{> "product-category"}}</p>
+        <h1 class="product__name">{{title}}</h1>
+        {{#if custom_excerpt}}<p class="product__price">{{custom_excerpt}}</p>{{/if}}
+        <div class="product__note content" data-product-note>
+            {{content}}
+        </div>
+        <div class="product__buy" data-product-buy>
+            <p class="product__checkout-note label">Checkout opens in a pop-up on this page</p>
+        </div>
+        <div class="product__small-print">
+            <p><b>Instant download.</b> The link arrives by email straight after checkout.</p>
+            <p>This is a digital product. Nothing is shipped.</p>
+            <a class="small-link" href="{{@site.url}}/refunds/">Refund policy</a>
+        </div>
+    </div>
+</div>
+
+<section class="inside band band--accent" aria-labelledby="inside-title" data-product-inside hidden>
+    <div class="inside__inner">
+        <h2 class="inside__title accent-word" id="inside-title">what’s inside</h2>
+        <dl class="inside__rows" data-product-rows></dl>
+    </div>
+</section>
+
+{{> "product-arrange"}}
+{{/post}}
+
+{{#if post.primary_tag}}
+    {{#get "posts" filter="primary_tag:{{post.primary_tag.slug}}" include="tags" limit="3" as |related|}}
+        {{> "related-reading" posts=related showAll=true}}
+    {{/get}}
+{{else}}
+    {{#get "posts" include="tags" limit="3" as |related|}}
+        {{> "related-reading" posts=related}}
+    {{/get}}
+{{/if}}
+
+<nav class="more-shop" aria-label="More from the shop">
+    <h2 class="more-shop__title">More from the shop</h2>
+    <ul class="more-shop__links">
+        <li><a href="{{@site.url}}/shop/#planners">Planners</a></li>
+        <li><a href="{{@site.url}}/shop/#journals">Journals</a></li>
+        <li><a href="{{@site.url}}/shop/#magazine">The Magazine</a></li>
+        <li><a href="{{@site.url}}/shop/#wallpapers">Wallpapers</a></li>
+    </ul>
+</nav>

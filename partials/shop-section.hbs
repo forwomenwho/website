@@ -1,0 +1,22 @@
+{{!-- One category on the shop landing page. Params: id (anchor), tag (internal tag slug), name. --}}
+{{#get "pages" filter="tag:{{tag}}" order="published_at desc" limit="50" as |products|}}
+{{#if products}}
+<section class="shop-section" id="{{../id}}" aria-labelledby="{{../id}}-title">
+    <header class="section-header">
+        <h2 class="section-header__title" id="{{../id}}-title">{{../name}}</h2>
+    </header>
+    <div class="grid grid--4 grid--products">
+        {{#foreach products}}
+        <a class="product-card" href="{{url}}">
+            <span class="product-card__media">
+                {{#if feature_image}}{{> "image" src=feature_image alt="" class="product-card__image" sizes="(min-width: 1000px) 300px, 50vw" width="1600" height="2000"}}{{/if}}
+            </span>
+            <span class="card__label">{{../../name}}</span>
+            <span class="card__title">{{title}}</span>
+            {{#if custom_excerpt}}<span class="card__meta">{{custom_excerpt}}</span>{{/if}}
+        </a>
+        {{/foreach}}
+    </div>
+</section>
+{{/if}}
+{{/get}}
