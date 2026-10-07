@@ -1,6 +1,7 @@
 /* For Women Who — site.js
-   Only three jobs: the mobile menu, the homepage sticky header, and showing the
-   designed success/error states on the subscribe form. Everything else is CSS. */
+   Small jobs only: the mobile menu, the homepage sticky header, the sub-topic
+   and shop-tab underlines, and the designed success/error states on the
+   subscribe form. Everything else is CSS. */
 (function () {
     'use strict';
 
@@ -84,6 +85,70 @@
             var gone = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
             masthead.classList.toggle('is-visible', gone);
         }).observe(homeNav);
+    }
+
+    /* ------------------------------------------------------------------
+       Section pages: the sub-topic row underlines the chosen topic and
+       shows only its pieces. Works from a link too (work.html#careers).
+       INTEGRATION: later, each sub-topic can be its own filtered page.
+       ------------------------------------------------------------------ */
+    var topicLinks = document.querySelectorAll('[data-filter]');
+    var topicGrid = document.querySelector('[data-filter-target]');
+    function showTopic(topic) {
+        if (!topicGrid) return;
+        var match = false;
+        topicLinks.forEach(function (a) {
+            var on = a.getAttribute('data-filter') === topic;
+            if (on) match = true;
+            if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+        });
+        if (!match) { topic = 'all'; topicLinks[0] && topicLinks[0].setAttribute('aria-current', 'page'); }
+        topicGrid.querySelectorAll(':scope > li').forEach(function (li) {
+            li.hidden = topic !== 'all' && li.getAttribute('data-subtopic') !== topic;
+        });
+    }
+    if (topicLinks.length && topicGrid) {
+        topicLinks.forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                var topic = a.getAttribute('data-filter');
+                showTopic(topic);
+                history.replaceState(null, '', topic === 'all' ? location.pathname : '#' + topic);
+            });
+        });
+        if (location.hash) showTopic(location.hash.slice(1));
+        window.addEventListener('hashchange', function () { showTopic(location.hash.slice(1) || 'all'); });
+    }
+
+    /* ------------------------------------------------------------------
+       Shop: the category tab for the section you're looking at is underlined,
+       whether you tapped it or scrolled to it.
+       ------------------------------------------------------------------ */
+    var tabs = document.querySelectorAll('[data-tab]');
+    function markTab(id) {
+        tabs.forEach(function (t) {
+            if (t.getAttribute('data-tab') === id) t.setAttribute('aria-current', 'true');
+            else t.removeAttribute('aria-current');
+        });
+    }
+    if (tabs.length) {
+        tabs.forEach(function (t) {
+            t.addEventListener('click', function () { markTab(t.getAttribute('data-tab')); });
+        });
+        // The current category is the last one whose top has passed 40% of the screen; the first by default.
+        var sections = Array.prototype.map.call(tabs, function (t) { return document.getElementById(t.getAttribute('data-tab')); });
+        var ticking = false;
+        function spy() {
+            ticking = false;
+            var line = window.innerHeight * 0.4;
+            var current = tabs[0].getAttribute('data-tab');
+            sections.forEach(function (sec) { if (sec && sec.getBoundingClientRect().top <= line) current = sec.id; });
+            markTab(current);
+        }
+        window.addEventListener('scroll', function () {
+            if (!ticking) { ticking = true; requestAnimationFrame(spy); }
+        }, { passive: true });
+        spy();
     }
 
     /* ------------------------------------------------------------------

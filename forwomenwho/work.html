@@ -98,11 +98,11 @@
 <nav class="subtopics" aria-label="Work topics">
   <!-- INTEGRATION: sub-topic tags of this section; each filters the section page -->
   <ul class="subtopics__list swipe">
-    <li><a href="work.html" aria-current="page">All</a></li>
-    <li><a href="work.html" data-field="section.subtopic">Careers</a></li>
-    <li><a href="work.html" data-field="section.subtopic">Money</a></li>
-    <li><a href="work.html" data-field="section.subtopic">Routines</a></li>
-    <li><a href="work.html" data-field="section.subtopic">The Edit</a></li>
+    <li><a href="work.html" data-filter="all" aria-current="page">All</a></li>
+    <li><a href="work.html#careers" data-filter="careers" data-field="section.subtopic">Careers</a></li>
+    <li><a href="work.html#money" data-filter="money" data-field="section.subtopic">Money</a></li>
+    <li><a href="work.html#routines" data-filter="routines" data-field="section.subtopic">Routines</a></li>
+    <li><a href="work.html#the-edit" data-filter="the-edit" data-field="section.subtopic">The Edit</a></li>
   </ul>
 </nav>
 
@@ -124,44 +124,44 @@
       <span class="small-link small-link--muted">Newest first</span>
     </header>
     <!-- INTEGRATION: the rest of this section's posts, newest first; the first card is wide -->
-    <ul class="grid grid--3 grid--section">
-    <li class="card-slot card-slot--large"><article class="card card--large">
+    <ul class="grid grid--3 grid--section" data-filter-target>
+    <li class="card-slot card-slot--large" data-subtopic="routines"><article class="card card--large">
   <figure class="card__media"><img src="assets/images/article-lead-to-do-list.jpg" alt="Desk flat lay" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">Routines</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">What I'm trying instead of writing an impossible to-do list</a></h3>
   <p class="card__meta" data-field="post.readingTime">5 min read</p>
 </article></li>
-    <li class="card-slot"><article class="card">
+    <li class="card-slot" data-subtopic="money"><article class="card">
   <figure class="card__media"><img src="assets/images/article-lead-guilty.jpg" alt="Hands, receipts, a small purse" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">Money</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">Things I no longer feel guilty about spending money on</a></h3>
   <p class="card__meta" data-field="post.readingTime">4 min read</p>
 </article></li>
-    <li class="card-slot"><article class="card">
+    <li class="card-slot" data-subtopic="routines"><article class="card">
   <figure class="card__media"><img src="assets/images/article-lead-morning-routine.jpg" alt="Espresso cup on dark wood" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">Routines</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">Maybe the morning routine isn't the problem</a></h3>
   <p class="card__meta" data-field="post.readingTime">4 min read</p>
 </article></li>
-    <li class="card-slot"><article class="card">
+    <li class="card-slot" data-subtopic="the-edit"><article class="card">
   <figure class="card__media"><img src="assets/images/article-lead-work-edit.jpg" alt="Six desk objects on ivory" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">The Edit</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">The Work Edit: six things worth having on your desk</a></h3>
   <p class="card__meta" data-field="post.readingTime">3 min read</p>
 </article></li>
-    <li class="card-slot"><article class="card">
+    <li class="card-slot" data-subtopic="careers"><article class="card">
   <figure class="card__media"><img src="assets/images/article-lead-headline-1.jpg" alt="[Image]" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">Careers</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">[HEADLINE]</a></h3>
   <p class="card__meta" data-field="post.readingTime">[X] min read</p>
 </article></li>
-    <li class="card-slot"><article class="card">
+    <li class="card-slot" data-subtopic="careers"><article class="card">
   <figure class="card__media"><img src="assets/images/article-lead-headline-2.jpg" alt="[Image]" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">Careers</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">[HEADLINE]</a></h3>
   <p class="card__meta" data-field="post.readingTime">[X] min read</p>
 </article></li>
-    <li class="card-slot"><article class="card">
+    <li class="card-slot" data-subtopic="money"><article class="card">
   <figure class="card__media"><img src="assets/images/article-lead-headline-3.jpg" alt="[Image]" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">Money</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">[HEADLINE]</a></h3>

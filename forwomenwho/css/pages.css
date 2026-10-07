@@ -973,7 +973,8 @@
     letter-spacing: var(--ls-label);
     text-transform: uppercase;
 }
-.shop-tabs__list a { display: block; padding: 16px 0; color: var(--graphite); }
+.shop-tabs__list a { display: block; padding: 16px 0 14px; border-bottom: 2px solid transparent; color: var(--graphite); }
+.shop-tabs__list a[aria-current] { border-bottom-color: var(--black); color: var(--black); }
 .shop-tabs__list a:hover { color: var(--accent); }
 @media (min-width: 1000px) {
     .shop-tabs__list { justify-content: center; gap: 0 48px; }

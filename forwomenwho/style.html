@@ -98,10 +98,10 @@
 <nav class="subtopics" aria-label="Style topics">
   <!-- INTEGRATION: sub-topic tags of this section; each filters the section page -->
   <ul class="subtopics__list swipe">
-    <li><a href="style.html" aria-current="page">All</a></li>
-    <li><a href="style.html" data-field="section.subtopic">[Sub-topic]</a></li>
-    <li><a href="style.html" data-field="section.subtopic">[Sub-topic]</a></li>
-    <li><a href="style.html" data-field="section.subtopic">[Sub-topic]</a></li>
+    <li><a href="style.html" data-filter="all" aria-current="page">All</a></li>
+    <li><a href="style.html#sub-topic" data-filter="sub-topic" data-field="section.subtopic">[Sub-topic]</a></li>
+    <li><a href="style.html#sub-topic" data-filter="sub-topic" data-field="section.subtopic">[Sub-topic]</a></li>
+    <li><a href="style.html#sub-topic" data-filter="sub-topic" data-field="section.subtopic">[Sub-topic]</a></li>
   </ul>
 </nav>
 
@@ -123,26 +123,26 @@
       <span class="small-link small-link--muted">Newest first</span>
     </header>
     <!-- INTEGRATION: the rest of this section's posts, newest first; the first card is wide -->
-    <ul class="grid grid--3 grid--section">
-    <li class="card-slot card-slot--large"><article class="card card--large">
+    <ul class="grid grid--3 grid--section" data-filter-target>
+    <li class="card-slot card-slot--large" data-subtopic="sub-topic"><article class="card card--large">
   <figure class="card__media"><img src="assets/images/article-lead-headline-1.jpg" alt="[Image]" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">[Sub-topic]</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">[HEADLINE]</a></h3>
   <p class="card__meta" data-field="post.readingTime">[X] min read</p>
 </article></li>
-    <li class="card-slot"><article class="card">
+    <li class="card-slot" data-subtopic="sub-topic"><article class="card">
   <figure class="card__media"><img src="assets/images/article-lead-headline-2.jpg" alt="[Image]" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">[Sub-topic]</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">[HEADLINE]</a></h3>
   <p class="card__meta" data-field="post.readingTime">[X] min read</p>
 </article></li>
-    <li class="card-slot"><article class="card">
+    <li class="card-slot" data-subtopic="sub-topic"><article class="card">
   <figure class="card__media"><img src="assets/images/article-lead-headline-3.jpg" alt="[Image]" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">[Sub-topic]</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">[HEADLINE]</a></h3>
   <p class="card__meta" data-field="post.readingTime">[X] min read</p>
 </article></li>
-    <li class="card-slot"><article class="card">
+    <li class="card-slot" data-subtopic="sub-topic"><article class="card">
   <figure class="card__media"><img src="assets/images/article-lead-headline-1.jpg" alt="[Image]" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
   <p class="card__label"><span data-field="post.subtopic">[Sub-topic]</span> · <span data-field="post.date">Sunday [DATE]</span></p>
   <h3 class="card__title"><a href="article.html" data-field="post.title">[HEADLINE]</a></h3>

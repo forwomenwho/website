@@ -28,7 +28,7 @@ Nothing is connected yet: the subscribe forms only show their success and error 
 | `css/base.css` | Fonts, reset, typography, links, focus outlines |
 | `css/components.css` | Header, footer, buttons, cards, bands, forms, marquee, swipe rows |
 | `css/pages.css` | Layouts that belong to one page |
-| `js/site.js` | Mobile menu, homepage sticky header, form messages |
+| `js/site.js` | Mobile menu, homepage sticky header, sub-topic filter and shop-tab underline, form messages |
 | `assets/images/` | Placeholder images, named by slot |
 | `assets/fonts/` | Self-hosted Bodoni Moda, EB Garamond, DM Sans |
 
