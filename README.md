@@ -1,5 +1,7 @@
 # For Women Who — Ghost theme
 
+> This repository also holds the **static HTML version** of the site (phase one of the static build brief) in [`forwomenwho/`](forwomenwho/README.md). Open `forwomenwho/index.html` to see it.
+
 The website theme for forwomenwho.com. Written for Ghost 6 and checked with Ghost's own theme validator (gscan 6.6.1: "compatible with Ghost 6.x").
 
 Everything below is done from the Ghost dashboard. You never need to edit code.

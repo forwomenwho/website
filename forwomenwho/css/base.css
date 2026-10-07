@@ -1,0 +1,193 @@
+/* ==========================================================================
+   For Women Who — base: fonts, reset, typography, links, focus
+   ========================================================================== */
+
+/* Self-hosted Google Fonts (SIL Open Font License), latin subset */
+@font-face {
+    font-family: "Bodoni Moda";
+    src: url("../assets/fonts/bodoni-moda.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Bodoni Moda";
+    src: url("../assets/fonts/bodoni-moda-italic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 400 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: "EB Garamond";
+    src: url("../assets/fonts/eb-garamond.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: "EB Garamond";
+    src: url("../assets/fonts/eb-garamond-italic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "DM Sans";
+    src: url("../assets/fonts/dm-sans.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400 500;
+    font-display: swap;
+}
+
+/* Accent script: Relationship of Mélodrame. LICENCE NOT CONFIRMED.
+   The file is NOT included. Nothing uses this family until --font-accent in
+   tokens.css is switched over, so browsers never request the missing file.
+   INTEGRATION: owner supplies assets/fonts/melodrame.woff2 once licensed. */
+@font-face {
+    font-family: "Relationship of Melodrame";
+    src: url("../assets/fonts/melodrame.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--warm-black);
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, p, figure, blockquote, dl, dd, ol, ul {
+    margin: 0;
+}
+
+h1, h2, h3, blockquote {
+    font-weight: 500;
+    text-wrap: balance;
+}
+
+ol, ul {
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+svg {
+    display: block;
+}
+
+button, input {
+    font: inherit;
+    color: inherit;
+}
+
+/* Links: plain in navigation and cards, underlined in body text, accent on hover. */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    color: var(--accent);
+}
+
+/* Visible keyboard focus in the accent colour; sand on dark and accent surfaces. */
+:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--white);
+}
+
+/* The accent script: one word or a short phrase, always large. */
+.accent-word {
+    font-family: var(--font-accent);
+    font-style: var(--font-accent-style);
+    font-weight: var(--font-accent-weight);
+    font-size: calc(var(--accent-scale) * 1em);
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* Small caps-style labels: DM Sans, uppercase, tracked. */
+.label {
+    font-family: var(--font-sans);
+    font-size: var(--fs-label);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+}
+
+.standfirst {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: var(--fs-standfirst);
+    line-height: 1.45;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: absolute;
+    left: 8px;
+    top: -100px;
+    z-index: 200;
+    padding: var(--space-s) var(--space-m);
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: var(--fs-button);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+}
+.skip-link:focus {
+    top: 8px;
+    color: var(--white);
+}
+
+/* Reduced motion: nothing animates. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+@media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+}

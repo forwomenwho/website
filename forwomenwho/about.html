@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — For Women Who</title>
+  <meta name="description" content="For Women Who is a weekly magazine about work, life, taste and everything we&#x27;re still figuring out.">
+  <!-- Social share tags: placeholder values. INTEGRATION: fill per page from the content studio. -->
+  <meta property="og:site_name" content="For Women Who">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About — For Women Who">
+  <meta property="og:description" content="For Women Who is a weekly magazine about work, life, taste and everything we&#x27;re still figuring out.">
+  <meta property="og:image" content="assets/images/share-placeholder.jpg">
+  <meta property="og:url" content="https://forwomenwho.com/about.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About — For Women Who">
+  <meta name="twitter:description" content="For Women Who is a weekly magazine about work, life, taste and everything we&#x27;re still figuring out.">
+  <meta name="twitter:image" content="assets/images/share-placeholder.jpg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body data-page="about">
+<!-- HEADER — identical on every page. INTEGRATION: turn into a shared header component. -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <!-- SITE SETTING: current-issue label. INTEGRATION: from settings.issueLabel -->
+      <span data-field="settings.issueLabel">Issue 01 · Sunday [DATE]</span>
+      <span class="top-bar__middle">New every Sunday</span>
+      <a href="#subscribe">Subscribe</a>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="masthead__inner">
+      <a class="icon-button masthead__menu" href="#menu" aria-label="Open menu" data-menu-open><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true" focusable="false"><path d="M3 8h18M3 16h18"/></svg></a>
+      <a class="masthead__wordmark" href="index.html">For Women Who</a>
+      <nav class="masthead__nav" aria-label="Main">
+    <!-- SITE SETTING: navigation links. This list is repeated identically in the header, the homepage nav bar,
+         the mobile menu and the footer. INTEGRATION: generate from the navigation setting. -->
+    <ul class="nav-list" data-field="settings.navigation">
+        <li class="nav-item nav-home"><a href="index.html">Home</a></li>
+        <li class="nav-item nav-work"><a href="work.html">Work</a></li>
+        <li class="nav-item nav-life"><a href="life.html">Life</a></li>
+        <li class="nav-item nav-style"><a href="style.html">Style</a></li>
+        <li class="nav-item nav-beauty"><a href="beauty.html">Beauty</a></li>
+        <li class="nav-item nav-culture"><a href="culture.html">Culture</a></li>
+        <li class="nav-item nav-issues"><a href="issues.html">Issues</a></li>
+        <li class="nav-item nav-shop"><a href="shop.html">Shop</a></li>
+        <li class="nav-item nav-about"><a href="about.html">About</a></li>
+    </ul>
+      </nav>
+      <span class="icon-button masthead__search" aria-hidden="true"></span>
+    </div>
+  </div>
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="menu__bar">
+      <a class="icon-button" href="#" aria-label="Close menu" data-menu-close><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19"/></svg></a>
+      <a class="masthead__wordmark" href="index.html">For Women Who</a>
+      <span class="icon-button" aria-hidden="true"></span>
+    </div>
+    <nav class="menu__nav" aria-label="Menu">
+    <!-- SITE SETTING: navigation links. This list is repeated identically in the header, the homepage nav bar,
+         the mobile menu and the footer. INTEGRATION: generate from the navigation setting. -->
+    <ul class="nav-list" data-field="settings.navigation">
+        <li class="nav-item nav-home"><a href="index.html">Home</a></li>
+        <li class="nav-item nav-work"><a href="work.html">Work</a></li>
+        <li class="nav-item nav-life"><a href="life.html">Life</a></li>
+        <li class="nav-item nav-style"><a href="style.html">Style</a></li>
+        <li class="nav-item nav-beauty"><a href="beauty.html">Beauty</a></li>
+        <li class="nav-item nav-culture"><a href="culture.html">Culture</a></li>
+        <li class="nav-item nav-issues"><a href="issues.html">Issues</a></li>
+        <li class="nav-item nav-shop"><a href="shop.html">Shop</a></li>
+        <li class="nav-item nav-about"><a href="about.html">About</a></li>
+    </ul>
+    </nav>
+    <div class="menu__foot">
+      <a href="#subscribe" data-menu-close>Subscribe</a>
+      <a href="the-edit.html">The Edit</a>
+    </div>
+  </div>
+</header>
+<!-- /HEADER -->
+
+<main id="main">
+<header class="photo-header about-hero">
+  <img class="photo-header__image" src="assets/images/about-hero.jpg" alt="Full-bleed B&amp;W editorial image, anonymous composition: hands, tailoring, a desk. No face" width="2400" height="1350" fetchpriority="high" data-slot="about-hero" data-field="settings.aboutHeroImage">
+  <div class="photo-header__text">
+    <p class="label about-hero__label">About</p>
+    <h1 class="about-hero__title" data-field="page.title">About <span class="accent-word">the magazine</span></h1>
+    <p class="about-hero__intro" data-field="page.intro">For Women Who is a weekly magazine about work, life, taste and everything we're still figuring out. A new issue comes out every Sunday.</p>
+  </div>
+</header>
+
+<section class="publish" aria-labelledby="publish-title">
+  <h2 class="publish__title" id="publish-title">What we publish</h2>
+  <!-- INTEGRATION: the five sections and their descriptions -->
+  <dl class="publish__list">
+    <div class="publish__row">
+      <dt class="label publish__name"><a href="work.html" data-field="section.name">Work</a></dt>
+      <dd class="publish__desc" data-field="section.description">Careers, ambition, money, and the things worth having on your desk.</dd>
+    </div>
+    <div class="publish__row">
+      <dt class="label publish__name"><a href="life.html" data-field="section.name">Life</a></dt>
+      <dd class="publish__desc" data-field="section.description">Routines, procrastination, friendships, comparison and standards.</dd>
+    </div>
+    <div class="publish__row">
+      <dt class="label publish__name"><a href="style.html" data-field="section.name">Style</a></dt>
+      <dd class="publish__desc" data-field="section.description">What to wear, what to buy, and how to get dressed on a Tuesday.</dd>
+    </div>
+    <div class="publish__row">
+      <dt class="label publish__name"><a href="beauty.html" data-field="section.name">Beauty</a></dt>
+      <dd class="publish__desc" data-field="section.description">Products we'd put in our own bag, with an honest note on each.</dd>
+    </div>
+    <div class="publish__row">
+      <dt class="label publish__name"><a href="culture.html" data-field="section.name">Culture</a></dt>
+      <dd class="publish__desc" data-field="section.description">Books, women worth knowing, and things worth noticing.</dd>
+    </div>
+  </dl>
+</section>
+
+<section class="how-we-write band band--black" aria-labelledby="how-title">
+  <div class="how-we-write__inner">
+    <h2 class="label how-we-write__label" id="how-title">How we write</h2>
+    <p class="how-we-write__statement" data-field="page.howWeWrite">We try to write the way an intelligent friend talks. Some pieces are useful, some are funny, and some are only very <span class="accent-word">accurate.</span></p>
+    <p class="how-we-write__after" data-field="page.howWeWriteAfter">None of them are rules for being a better woman.</p>
+  </div>
+</section>
+
+<section class="notes" aria-label="Notes">
+  <div class="notes__item">
+    <h2 class="notes__title">What we recommend</h2>
+    <p data-field="page.noteRecommend">Everything in The Edit is something we'd put on our own desk or in our own bag. [Confirm or edit: we say clearly when a link earns us a commission or when something was a gift.]</p>
+  </div>
+  <div class="notes__item">
+    <h2 class="notes__title">A note on our images</h2>
+    <p data-field="page.noteImages">[Confirm or edit: The photography in For Women Who is generated editorial imagery. The women in it are models and none of them is the editor.]</p>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <h2 class="contact__title" id="contact-title">Write to us</h2>
+  <!-- SITE SETTING: contact email. INTEGRATION: from settings.contactEmail -->
+  <a class="contact__email" href="mailto:[hello@YOUR-DOMAIN]" data-field="settings.contactEmail">[hello@YOUR-DOMAIN]</a>
+  <p class="label contact__note">For questions, pitches and shop help</p>
+</section>
+
+<!-- SUBSCRIBE — the same form everywhere -->
+<section class="subscribe subscribe--light" id="subscribe" aria-labelledby="subscribe-heading">
+  <div class="subscribe__inner">
+    <div class="subscribe__intro">
+      <p class="label subscribe__label">Every Sunday</p>
+      <h2 class="subscribe__heading" id="subscribe-heading">A weekly magazine for women who have things to do.</h2>
+    </div>
+    <!-- INTEGRATION: newsletter signup endpoint -->
+    <form class="subscribe__form" action="#" method="post" novalidate data-subscribe>
+      <label class="label subscribe__field-label" for="subscribe-email">Email address</label>
+      <input class="subscribe__input" id="subscribe-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+      <button class="button subscribe__button" type="submit">Subscribe</button>
+      <p class="subscribe__message subscribe__message--success" data-state="success" role="status" hidden>Thank you. Check your inbox to confirm.</p>
+      <p class="subscribe__message subscribe__message--error" data-state="error" role="alert" hidden>That doesn’t look like an email address. Check it and try again.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER — identical on every page. INTEGRATION: turn into a shared footer component. -->
+<footer class="site-footer">
+  <div class="wordmark-fit">
+    <a class="wordmark wordmark--footer" href="index.html">For Women Who</a>
+  </div>
+  <div class="site-footer__links">
+    <nav class="site-footer__nav" aria-label="Footer">
+    <!-- SITE SETTING: navigation links. This list is repeated identically in the header, the homepage nav bar,
+         the mobile menu and the footer. INTEGRATION: generate from the navigation setting. -->
+    <ul class="nav-list" data-field="settings.navigation">
+        <li class="nav-item nav-home"><a href="index.html">Home</a></li>
+        <li class="nav-item nav-work"><a href="work.html">Work</a></li>
+        <li class="nav-item nav-life"><a href="life.html">Life</a></li>
+        <li class="nav-item nav-style"><a href="style.html">Style</a></li>
+        <li class="nav-item nav-beauty"><a href="beauty.html">Beauty</a></li>
+        <li class="nav-item nav-culture"><a href="culture.html">Culture</a></li>
+        <li class="nav-item nav-issues"><a href="issues.html">Issues</a></li>
+        <li class="nav-item nav-shop"><a href="shop.html">Shop</a></li>
+        <li class="nav-item nav-about"><a href="about.html">About</a></li>
+    </ul>
+    </nav>
+    <!-- SITE SETTING: social links. INTEGRATION: from settings.social -->
+    <ul class="site-footer__social">
+      <li><a href="#" data-field="settings.instagramUrl">Instagram</a></li>
+      <li><a href="#" data-field="settings.pinterestUrl">Pinterest</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+  </div>
+  <ul class="site-footer__legal">
+    <li>© For Women Who</li>
+    <li><a href="terms.html">Terms</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="refunds.html">Refunds</a></li>
+  </ul>
+</footer>
+<!-- /FOOTER -->
+</body>
+</html>

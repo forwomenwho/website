@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Life — For Women Who</title>
+  <meta name="description" content="Routines, procrastination, friendships, comparison and standards.">
+  <!-- Social share tags: placeholder values. INTEGRATION: fill per page from the content studio. -->
+  <meta property="og:site_name" content="For Women Who">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Life — For Women Who">
+  <meta property="og:description" content="Routines, procrastination, friendships, comparison and standards.">
+  <meta property="og:image" content="assets/images/share-placeholder.jpg">
+  <meta property="og:url" content="https://forwomenwho.com/life.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Life — For Women Who">
+  <meta name="twitter:description" content="Routines, procrastination, friendships, comparison and standards.">
+  <meta name="twitter:image" content="assets/images/share-placeholder.jpg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body data-page="life">
+<!-- HEADER — identical on every page. INTEGRATION: turn into a shared header component. -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <!-- SITE SETTING: current-issue label. INTEGRATION: from settings.issueLabel -->
+      <span data-field="settings.issueLabel">Issue 01 · Sunday [DATE]</span>
+      <span class="top-bar__middle">New every Sunday</span>
+      <a href="#subscribe">Subscribe</a>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="masthead__inner">
+      <a class="icon-button masthead__menu" href="#menu" aria-label="Open menu" data-menu-open><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true" focusable="false"><path d="M3 8h18M3 16h18"/></svg></a>
+      <a class="masthead__wordmark" href="index.html">For Women Who</a>
+      <nav class="masthead__nav" aria-label="Main">
+    <!-- SITE SETTING: navigation links. This list is repeated identically in the header, the homepage nav bar,
+         the mobile menu and the footer. INTEGRATION: generate from the navigation setting. -->
+    <ul class="nav-list" data-field="settings.navigation">
+        <li class="nav-item nav-home"><a href="index.html">Home</a></li>
+        <li class="nav-item nav-work"><a href="work.html">Work</a></li>
+        <li class="nav-item nav-life"><a href="life.html">Life</a></li>
+        <li class="nav-item nav-style"><a href="style.html">Style</a></li>
+        <li class="nav-item nav-beauty"><a href="beauty.html">Beauty</a></li>
+        <li class="nav-item nav-culture"><a href="culture.html">Culture</a></li>
+        <li class="nav-item nav-issues"><a href="issues.html">Issues</a></li>
+        <li class="nav-item nav-shop"><a href="shop.html">Shop</a></li>
+        <li class="nav-item nav-about"><a href="about.html">About</a></li>
+    </ul>
+      </nav>
+      <span class="icon-button masthead__search" aria-hidden="true"></span>
+    </div>
+  </div>
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="menu__bar">
+      <a class="icon-button" href="#" aria-label="Close menu" data-menu-close><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19"/></svg></a>
+      <a class="masthead__wordmark" href="index.html">For Women Who</a>
+      <span class="icon-button" aria-hidden="true"></span>
+    </div>
+    <nav class="menu__nav" aria-label="Menu">
+    <!-- SITE SETTING: navigation links. This list is repeated identically in the header, the homepage nav bar,
+         the mobile menu and the footer. INTEGRATION: generate from the navigation setting. -->
+    <ul class="nav-list" data-field="settings.navigation">
+        <li class="nav-item nav-home"><a href="index.html">Home</a></li>
+        <li class="nav-item nav-work"><a href="work.html">Work</a></li>
+        <li class="nav-item nav-life"><a href="life.html">Life</a></li>
+        <li class="nav-item nav-style"><a href="style.html">Style</a></li>
+        <li class="nav-item nav-beauty"><a href="beauty.html">Beauty</a></li>
+        <li class="nav-item nav-culture"><a href="culture.html">Culture</a></li>
+        <li class="nav-item nav-issues"><a href="issues.html">Issues</a></li>
+        <li class="nav-item nav-shop"><a href="shop.html">Shop</a></li>
+        <li class="nav-item nav-about"><a href="about.html">About</a></li>
+    </ul>
+    </nav>
+    <div class="menu__foot">
+      <a href="#subscribe" data-menu-close>Subscribe</a>
+      <a href="the-edit.html">The Edit</a>
+    </div>
+  </div>
+</header>
+<!-- /HEADER -->
+
+<main id="main">
+<header class="photo-header section-hero">
+  <img class="photo-header__image" src="assets/images/section-panel-life.jpg" alt="Life section image: two women walking, motion blur" width="1000" height="2000" fetchpriority="high" data-slot="section-panel" data-field="section.image">
+  <div class="photo-header__text wordmark-fit">
+    <p class="label section-hero__number">Section <span data-field="section.number">02</span></p>
+    <h1 class="wordmark" data-field="section.name">Life</h1>
+    <p class="standfirst" data-field="section.description">Routines, procrastination, friendships, comparison and standards.</p>
+  </div>
+</header>
+
+<nav class="subtopics" aria-label="Life topics">
+  <!-- INTEGRATION: sub-topic tags of this section; each filters the section page -->
+  <ul class="subtopics__list swipe">
+    <li><a href="life.html" aria-current="page">All</a></li>
+    <li><a href="life.html" data-field="section.subtopic">[Sub-topic]</a></li>
+    <li><a href="life.html" data-field="section.subtopic">[Sub-topic]</a></li>
+    <li><a href="life.html" data-field="section.subtopic">[Sub-topic]</a></li>
+  </ul>
+</nav>
+
+<!-- INTEGRATION: the newest post in this section -->
+<section class="feature feature--wide band band--accent" aria-label="Newest">
+  <figure class="feature__media"><img src="assets/images/article-lead-friends.jpg" alt="Studio portrait, side profile" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
+  <div class="feature__text">
+    <p class="label feature__label">Newest · <span data-field="post.subtopic">[Sub-topic]</span> · <span data-field="post.readingTime">5 min read</span></p>
+    <h2 class="feature__title"><a href="article.html" data-field="post.title">What happens when your friends start moving at completely different speeds</a></h2>
+    <p class="standfirst" data-field="post.standfirst">[Standfirst]</p>
+    <a class="button button--on-accent" href="article.html">Read the piece</a>
+  </div>
+</section>
+
+<section class="band band--ivory" aria-labelledby="all-title">
+  <div class="inner">
+    <header class="section-header">
+      <h2 class="section-header__title" id="all-title">All of Life</h2>
+      <span class="small-link small-link--muted">Newest first</span>
+    </header>
+    <!-- INTEGRATION: the rest of this section's posts, newest first; the first card is wide -->
+    <ul class="grid grid--3 grid--section">
+    <li class="card-slot card-slot--large"><article class="card card--large">
+  <figure class="card__media"><img src="assets/images/article-lead-morning-routine.jpg" alt="Espresso cup on dark wood" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
+  <p class="card__label"><span data-field="post.subtopic">[Sub-topic]</span> · <span data-field="post.date">Sunday [DATE]</span></p>
+  <h3 class="card__title"><a href="article.html" data-field="post.title">Maybe the morning routine isn't the problem</a></h3>
+  <p class="card__meta" data-field="post.readingTime">4 min read</p>
+</article></li>
+    <li class="card-slot"><article class="card">
+  <figure class="card__media"><img src="assets/images/article-lead-headline-1.jpg" alt="[Image]" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
+  <p class="card__label"><span data-field="post.subtopic">[Sub-topic]</span> · <span data-field="post.date">Sunday [DATE]</span></p>
+  <h3 class="card__title"><a href="article.html" data-field="post.title">[HEADLINE]</a></h3>
+  <p class="card__meta" data-field="post.readingTime">[X] min read</p>
+</article></li>
+    <li class="card-slot"><article class="card">
+  <figure class="card__media"><img src="assets/images/article-lead-headline-2.jpg" alt="[Image]" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
+  <p class="card__label"><span data-field="post.subtopic">[Sub-topic]</span> · <span data-field="post.date">Sunday [DATE]</span></p>
+  <h3 class="card__title"><a href="article.html" data-field="post.title">[HEADLINE]</a></h3>
+  <p class="card__meta" data-field="post.readingTime">[X] min read</p>
+</article></li>
+    <li class="card-slot"><article class="card">
+  <figure class="card__media"><img src="assets/images/article-lead-headline-3.jpg" alt="[Image]" width="2400" height="1600" loading="lazy" decoding="async" data-slot="article-lead" data-field="post.image"></figure>
+  <p class="card__label"><span data-field="post.subtopic">[Sub-topic]</span> · <span data-field="post.date">Sunday [DATE]</span></p>
+  <h3 class="card__title"><a href="article.html" data-field="post.title">[HEADLINE]</a></h3>
+  <p class="card__meta" data-field="post.readingTime">[X] min read</p>
+</article></li>
+    </ul>
+    <div class="archive__more">
+      <!-- INTEGRATION: link to the next page of older posts -->
+      <a class="button button--outline" href="life.html">Older pieces</a>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE — the same form everywhere -->
+<section class="subscribe subscribe--centre" id="subscribe" aria-labelledby="subscribe-heading">
+  <div class="subscribe__inner">
+    <div class="subscribe__intro">
+      <p class="subscribe__script accent-word" aria-hidden="true">every Sunday</p>
+      <h2 class="subscribe__heading" id="subscribe-heading">A weekly magazine for women who have things to do</h2>
+    </div>
+    <!-- INTEGRATION: newsletter signup endpoint -->
+    <form class="subscribe__form" action="#" method="post" novalidate data-subscribe>
+      <label class="label subscribe__field-label" for="subscribe-email">Email address</label>
+      <input class="subscribe__input" id="subscribe-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+      <button class="button subscribe__button" type="submit">Subscribe</button>
+      <p class="subscribe__message subscribe__message--success" data-state="success" role="status" hidden>Thank you. Check your inbox to confirm.</p>
+      <p class="subscribe__message subscribe__message--error" data-state="error" role="alert" hidden>That doesn’t look like an email address. Check it and try again.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER — identical on every page. INTEGRATION: turn into a shared footer component. -->
+<footer class="site-footer">
+  <div class="wordmark-fit">
+    <a class="wordmark wordmark--footer" href="index.html">For Women Who</a>
+  </div>
+  <div class="site-footer__links">
+    <nav class="site-footer__nav" aria-label="Footer">
+    <!-- SITE SETTING: navigation links. This list is repeated identically in the header, the homepage nav bar,
+         the mobile menu and the footer. INTEGRATION: generate from the navigation setting. -->
+    <ul class="nav-list" data-field="settings.navigation">
+        <li class="nav-item nav-home"><a href="index.html">Home</a></li>
+        <li class="nav-item nav-work"><a href="work.html">Work</a></li>
+        <li class="nav-item nav-life"><a href="life.html">Life</a></li>
+        <li class="nav-item nav-style"><a href="style.html">Style</a></li>
+        <li class="nav-item nav-beauty"><a href="beauty.html">Beauty</a></li>
+        <li class="nav-item nav-culture"><a href="culture.html">Culture</a></li>
+        <li class="nav-item nav-issues"><a href="issues.html">Issues</a></li>
+        <li class="nav-item nav-shop"><a href="shop.html">Shop</a></li>
+        <li class="nav-item nav-about"><a href="about.html">About</a></li>
+    </ul>
+    </nav>
+    <!-- SITE SETTING: social links. INTEGRATION: from settings.social -->
+    <ul class="site-footer__social">
+      <li><a href="#" data-field="settings.instagramUrl">Instagram</a></li>
+      <li><a href="#" data-field="settings.pinterestUrl">Pinterest</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+  </div>
+  <ul class="site-footer__legal">
+    <li>© For Women Who</li>
+    <li><a href="terms.html">Terms</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="refunds.html">Refunds</a></li>
+  </ul>
+</footer>
+<!-- /FOOTER -->
+</body>
+</html>
