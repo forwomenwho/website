@@ -47,6 +47,9 @@
 .hero::after {
     background: radial-gradient(ellipse 75% 70% at 50% 55%, var(--scrim-heavy), var(--scrim-medium) 55%, var(--scrim-faint));
 }
+.hero .photo-header__image { object-position: var(--hero-focus); }
+.about-hero .photo-header__image { object-position: var(--about-focus); }
+.section-hero .photo-header__image { object-position: var(--section-focus); }
 .hero .photo-header__text {
     align-items: center;
     width: 100%;

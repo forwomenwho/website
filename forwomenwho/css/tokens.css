@@ -132,6 +132,12 @@ html {
     --ls-wide: 0.2em;
     --ls-wordmark: -0.02em;
 
+    /* Photo focus: which part of a photo stays in view when it's cropped
+       (mostly on phones). Horizontal % then vertical %. Change when you swap the photo. */
+    --hero-focus: 70% 50%;        /* homepage hero: keeps the woman in the suit in frame on phones */
+    --about-focus: 50% 50%;
+    --section-focus: 50% 30%;     /* section page headers: tall photos, keep the upper part */
+
     /* Spacing */
     --gutter: clamp(20px, 12.6px + 1.9vw, 48px);
     --band-pad: clamp(56px, 40px + 4.2vw, 112px);
