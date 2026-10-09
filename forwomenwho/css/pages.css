@@ -274,44 +274,31 @@
 .shop-band__stage {
     container-type: inline-size;
     position: relative;
+    height: 430px;
 }
 .shop-band__wordmark {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 0;
     color: var(--black);
 }
-.shop-band .wordmark--shop { word-spacing: var(--shop-word-gap); }
-@supports (font-size: 1cqw) {
-    .shop-band .wordmark--shop { font-size: var(--wm-shop-band); }
-}
 .shop-band__wordmark a:hover { color: var(--accent); }
-/* The figure stands in the gap between THE and SHOP, in front of the letters. */
 .shop-band__figure {
-    position: relative;
-    z-index: 1;
-    display: block;
-    width: auto;
-    height: 374px;
-    max-width: none;
-    margin-left: var(--shop-gap-centre);
-    padding-top: 12px;
+    position: absolute;
+    left: 44%;
+    bottom: 0;
     transform: translateX(-50%);
+    width: 140px;
+    height: 374px;
+    object-fit: contain;
+    object-position: bottom center;
     pointer-events: none;
-}
-@supports (font-size: 1cqw) {
-    .shop-band__figure { height: var(--shop-figure-h-phone); padding-top: 2cqw; }
 }
 @media (min-width: 700px) {
     .shop-band { padding: 96px var(--gutter) 0; }
-    .shop-band__figure { height: 550px; }
-}
-@supports (font-size: 1cqw) {
-    @media (min-width: 700px) {
-        .shop-band__figure { height: var(--shop-figure-h); }
-    }
+    .shop-band__stage { height: 620px; }
+    .shop-band__figure { width: 220px; height: 550px; }
 }
 
 .shop-strip {
