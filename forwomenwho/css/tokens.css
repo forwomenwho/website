@@ -122,6 +122,13 @@ html {
     --wm-footer-fallback: clamp(40px, 10.5vw, 160px);
     --wm-shop: 20.4cqw;            /* THE SHOP */
     --wm-shop-fallback: clamp(72px, 19vw, 280px);
+    /* Homepage shop band: the words are spaced apart so the cutout figure
+       stands in the gap between THE and SHOP. */
+    --wm-shop-band: 19.1cqw;
+    --shop-word-gap: 0.35em;       /* extra space between THE and SHOP */
+    --shop-gap-centre: 43.5%;      /* where that gap sits across the band (measured) */
+    --shop-figure-h: 40cqw;        /* figure height on tablet and up */
+    --shop-figure-h-phone: 60cqw;  /* figure height on phones (letters are smaller there) */
     --wm-word: 26cqw;              /* WORK, LIFE, STYLE, ISSUES, 404 */
     --wm-word-fallback: clamp(90px, 24vw, 360px);
     --wm-beauty: 21.4cqw;
