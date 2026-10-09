@@ -274,7 +274,7 @@
 .shop-band__stage {
     container-type: inline-size;
     position: relative;
-    height: 430px;
+    height: 520px;
 }
 .shop-band__wordmark {
     position: absolute;
@@ -289,16 +289,17 @@
     left: 44%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 140px;
-    height: 374px;
+    width: auto;
+    max-width: none;
+    height: 480px;
     object-fit: contain;
     object-position: bottom center;
     pointer-events: none;
 }
 @media (min-width: 700px) {
     .shop-band { padding: 96px var(--gutter) 0; }
-    .shop-band__stage { height: 620px; }
-    .shop-band__figure { width: 220px; height: 550px; }
+    .shop-band__stage { height: clamp(720px, 40px + 62vw, 940px); }
+    .shop-band__figure { height: clamp(680px, 18px + 60vw, 880px); }
 }
 
 .shop-strip {
