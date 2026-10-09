@@ -342,14 +342,14 @@
 .shop-cat__link-long { display: none; }
 .shop-cat:hover { color: var(--sand); }
 @media (min-width: 1000px) {
+    /* Four categories, always in one row. */
     .shop-strip {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 40px 56px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px clamp(20px, -20px + 4vw, 56px);
         padding: 48px var(--gutter);
     }
-    .shop-strip li { flex: 1 1 220px; }
+    .shop-strip li { min-width: 0; }
     .shop-cat {
         display: grid;
         grid-template-columns: 80px 1fr;
